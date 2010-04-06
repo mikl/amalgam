@@ -1,0 +1,15 @@
+-e svn+http://code.djangoproject.com/svn/django/trunk/#egg=django
+South
+BeautifulSoup==3.0.8
+django-tagging
+Markdown
+Pygments
+python-dateutil
+
+-e git+git://github.com/django-extensions/django-extensions.git#egg=django_extensions
+-e git+git://github.com/nathanborror/django-basic-apps.git#egg=basic
+-e git+git://github.com/montylounge/django-proxy.git#egg=django_proxy
+-e hg+https://bitbucket.org/ubernostrum/django-contact-form/#egg=contact_form
+-e git+git://github.com/sunlightlabs/django-honeypot.git#egg=honeypot
+-e git+git://github.com/hbussell/django-slimmer.git#egg=django-slimmer
+
