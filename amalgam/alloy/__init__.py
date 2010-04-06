@@ -1,0 +1,2 @@
+""" Amalgam-specific Django app. """
+
