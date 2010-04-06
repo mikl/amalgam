@@ -85,6 +85,7 @@ INSTALLED_APPS = (
     'django.contrib.admin',
     'django.contrib.auth',
     'django.contrib.contenttypes',
+    'django.contrib.markup',
     'django.contrib.sessions',
     'django.contrib.sitemaps',
     'django.contrib.sites',
@@ -96,6 +97,7 @@ INSTALLED_APPS = (
     'basic.inlines',
     'basic.blog',
     'basic.bookmarks',
+    'oembed',
     'django_proxy',
 )
 
