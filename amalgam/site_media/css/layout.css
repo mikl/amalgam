@@ -1,0 +1,23 @@
+#container {
+  text-align: center;
+  margin: auto;
+  width: 960px;
+}
+
+#container div {
+  text-align: left;
+}
+
+#header, #main_content, #sidebar, #footer {
+  margin: 10px;
+}
+
+#main_content {
+  float: left;
+  width: 700px;
+}
+
+#sidebar {
+  float: left;
+  width: 220px;  
+}

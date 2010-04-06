@@ -1,0 +1,47 @@
+{% extends "blog/base_blog.html" %}
+{% load blog tagging_tags inlines cache markup oembed_tags i18n %}
+
+{% block title %}{{ object.title }} | {{ block.super }}{% endblock %}
+
+{% block meta %}
+<meta name="keywords" content="{{ object.get_meta_keywords }}">
+<meta name="description" content="{{ object.get_meta_description }}">
+{% with object.author.get_full_name as author_name %}
+    {% if author_name %}
+    <meta name="author" content="{{ author_name }}">
+    {% endif %}
+{% endwith %}
+{% endblock %}
+
+{% block body_class %}{{ block.super }} post_detail{% endblock %}
+{% block body_id %}post_{{ object.id }}{% endblock %}
+
+{% comment 'previous and next posts' %}
+{% block content_title %}
+  <p class="other_posts">
+    {% if object.get_previous_by_publish %}
+    <a class="previous" href="{{ object.get_previous_post.get_absolute_url }}">&laquo; {{ object.get_previous_post }}</a>
+    {% endif %}
+    {% if object.get_next_by_publish %}
+    | <a class="next" href="{{ object.get_next_post.get_absolute_url }}">{{ object.get_next_post }} &raquo;</a>
+    {% endif %}
+  </p>
+{% endblock %}
+{% endcomment %}
+
+{% block content %}
+
+  <div class="post clearfix">
+    <div class="date">{{ object.publish|date:"M d" }}</div>
+    <h2>{{ object.title }}</h2>
+    <p class="teaser">{{ object.tease|safe }}</p>
+      <div class="body">
+  {% oembed %}
+      {{ object.body_markup|render_inlines|safe }}
+  {% endoembed %}
+      </div>
+  </div>
+
+  {#{% include "blog/includes/comments.html" %}#}
+{% endblock %}
+

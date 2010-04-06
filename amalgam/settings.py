@@ -5,6 +5,7 @@ import os
 # Standard settings for development. Override in local_settings.py
 DEBUG = True
 TEMPLATE_DEBUG = DEBUG
+LOCAL_DEV = True
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.sqlite3',
@@ -64,7 +65,7 @@ TEMPLATE_CONTEXT_PROCESSORS = (
     "django.core.context_processors.i18n",
     "django.core.context_processors.media",
     "django.core.context_processors.request",
-
+    "alloy.context_processors.amalgam_settings",
 )
 
 MIDDLEWARE_CLASSES = (

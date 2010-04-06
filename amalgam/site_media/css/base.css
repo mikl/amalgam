@@ -1,0 +1,47 @@
+
+/** Base font **/
+body {
+  font: 13px/1.5 "Lucida Grande", "Lucida Sans Unicode", "Lucida Sans", Geneva, Verdana, sans-serif;
+  margin: 0;
+}
+
+/**
+ * Clear Floated Elements
+ *
+ * http://sonspring.com/journal/clearing-floats
+ */
+.clear {
+  clear: both;
+  display: block;
+  overflow: hidden;
+  visibility: hidden;
+  width: 0;
+  height: 0;
+}
+
+h1 { font-size: 36px; }
+h2 { font-size: 24px; }
+h3 { font-size: 20px; }
+h4 { font-size: 18px; }
+h5 { font-size: 16px; }
+h6 { font-size: 14px; }
+
+h1, h2, h3, h4, h5, h6, p {
+  margin-bottom: 0.5em;
+}
+
+/**
+ * New clearfix 
+ *
+ * http://perishablepress.com/press/2009/12/06/new-clearfix-hack/
+ * IE < 8 taken care of with conditional comment in base.html
+ */
+.clearfix:after {
+  visibility: hidden;
+  display: block;
+  font-size: 0;
+  content: " ";
+  clear: both;
+  height: 0;
+}
+

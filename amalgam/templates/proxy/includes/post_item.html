@@ -1,0 +1,30 @@
+{% load blog i18n inlines markup oembed_tags tagging_tags %}
+
+<li class="post clearfix">
+  <a class="tab" href="{{ object.content_object.get_absolute_url }}">#{{ object.id }}</a>
+  <div class="meta">
+    <p class="byline">
+    {% blocktrans with object.content_object.author.get_full_name as name and object.pub_date|date:"SHORT_DATETIME_FORMAT" as date %}Blog post<br />
+    by {{ name }}<br />
+    on {{ date }}
+    {% endblocktrans %}
+    </p>
+    {% if object.updated_on > object.pub_date %}
+        <p class="last-update">
+        {% blocktrans with object.updated_on|date:"SHORT_DATETIME_FORMAT" as date %}
+        Last updated<br /> on {{ date }}
+        {% endblocktrans %}
+        </p>
+    {% endif %}
+  </div>
+  <div class="content">
+      <h2><a href="{{ object.content_object.get_absolute_url }}">{{ object.title }}</a></h2>
+      <p class="teaser">{{ object.content_object.tease|safe }}</p>
+        <div class="body">
+      {% oembed %}
+        {{ object.description|render_inlines|markdown:"codehilite" }}
+      {% endoembed %}
+        </div>
+    </div>
+</li>
+

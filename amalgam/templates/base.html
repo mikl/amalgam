@@ -1,0 +1,53 @@
+{% load i18n %}
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" dir="{% if LANGUAGE_BIDI %}rtl{% else %}ltr{% endif %}" xml:lang="{{ LANGUAGE_CODE }}" lang="{{ LANGUAGE_CODE }}">
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+    <title>{% block title %}{{ BLOG_SETTINGS.site_name }}{% endblock %}</title>
+
+    {% block meta %}
+    <meta name="keywords" content="{{ BLOG_SETTINGS.meta_keywords }}">
+    <meta name="description" content="{{ BLOG_SETTINGS.meta_description }}">
+    <meta name="author" content="{{ BLOG_SETTINGS.author_name }}">
+    {% endblock %}
+    <meta name="copyright" content="{{ BLOG_SETTINGS.copyright }}">
+  
+    {% block extra_css %}{% endblock %}
+    <link rel="stylesheet" href="{{ MEDIA_URL }}css/reset.css" />
+    <link rel="stylesheet" href="{{ MEDIA_URL }}css/base.css" /> 
+    <link rel="stylesheet" href="{{ MEDIA_URL }}css/layout.css" />
+    <link rel="stylesheet" href="{{ MEDIA_URL }}css/screen.css" />
+    <link rel="stylesheet" href="{{ MEDIA_URL }}css/pygments.css" />
+    
+    {% block extra_head_base %}
+        {% block extra_head %}{% endblock %}
+    {% endblock %}
+</head>
+<body class="{% block body_class %}default{% endblock %}">
+  <div id="container">
+    <div id="header" class="clearfix">
+    {% block header %}
+        <div id="logo">
+            <h1><a href="/">{{ BLOG_SETTINGS.site_name }}</a></h1>
+        </div>
+    {% endblock %}
+    </div>
+
+    <div id="body">
+    {% block body %}
+        <div id="main_content">
+            {% block content %}{% endblock %}
+        </div>
+        <div id="sidebar">
+        </div>
+    {% endblock %}
+    </div>
+
+    <div id="footer">
+        <div class="content">{% block footer %}{% endblock %}</div>
+    </div>
+  </div>
+  {% block extra_js %}{% endblock %}
+</body>
+</html>
+

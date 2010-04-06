@@ -1,0 +1,107 @@
+body {
+  background-color: #4B5A4A;
+  color: #D9E2D9;
+}
+
+a:link {color: #53AA50; text-decoration: none;}
+a:active {color: #95F792; text-decoration: overline;}
+a:visited {color: #53AA50; text-decoration: none;}
+a:hover {color: #95F792; text-decoration: underline;}
+
+#logo {
+  float: left;
+}
+
+
+#logo a {
+  color: white;
+  text-decoration: none;
+  text-shadow: 3px 3px 2px #303C30;
+}
+
+#header .slogan {
+  color: white;
+  font-size: 16px;
+  float: left;
+  margin: 21px 20px 0 20px;
+  text-shadow: 1px 1px 1px #303C30;
+}
+
+
+#main_content .post_list li {
+  margin-bottom: 20px;
+}
+
+
+#main_content .post_list li .tab {
+  background-color: white;
+  color: #999;
+  display: block;
+  float: left;
+  font-size: 18px;
+  line-height: 36px;
+  overflow: hidden;
+  padding: 10px 0 10px 0;
+  text-indent: 10px;
+  width: 150px;
+  -moz-border-radius-topleft: 10px;
+  -webkit-border-top-left-radius: 10px;
+  border-top-left-radius: 10px;
+  -moz-border-radius-bottomleft: 10px;
+  -webkit-border-bottom-left-radius: 10px;
+  border-bottom-left-radius: 10px;
+  -moz-box-shadow: -2px 3px 2px #303C30;
+  -webkit-box-shadow: -2px 3px 2px #303C30;
+  box-shadow: -2px 3px 2px #303C30;
+}
+
+#main_content .post_list li .meta {
+  color: #8FA48E;
+  float: left;
+  font-size: 11px;
+  clear: left;
+  margin: 10px;
+  width: 130px;
+}
+
+#main_content .post_list li .content {
+  background-color: white;
+  color: black;
+  margin-left: 150px;
+  margin-right: 10px;
+  padding: 10px;
+  -moz-border-radius: 10px;
+  -webkit-border-radius: 10px;
+  border-radius: 10px;  
+  -moz-border-radius-topleft: 0;
+  -webkit-border-top-left-radius: 0;
+  border-top-left-radius: 0;
+  -moz-box-shadow: 3px 3px 2px #303C30;
+  -webkit-box-shadow: 3px 3px 2px #303C30;
+  box-shadow: 3px 3px 2px #303C30;
+}
+
+#main_content .post_list li .content h2 {
+  margin-bottom: 10px;
+}
+
+#main_content .codehilite,
+#main_content .codehilitetable {
+  font-size: 12px;
+  font-family: Consolas, Menlo, Monaco, Lucida Console, Lucida Sans Typewriter, monospace;
+}
+
+#main_content .codehilitetable .linenos {
+  padding-right: 5px;
+}
+
+#main_content blockquote {
+  border-left: 10px solid #D9E2D9;
+  margin: 5px -10px 5px -10px;
+  padding: 5px 10px 2px 10px;
+}
+
+#main_content blockquote p {
+  margin-bottom: 5px;
+}
+  
