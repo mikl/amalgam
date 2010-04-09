@@ -114,4 +114,20 @@ body.post_detail #main_content .post h1 {
 #main_content blockquote p {
   margin-bottom: 5px;
 }
+
+#sidebar .sidebar-block {
+  background-color: white;
+  margin-bottom: 20px;
+  padding: 10px;
+  -moz-border-radius: 10px;
+  -webkit-border-radius: 10px;
+  border-radius: 10px;
+  -moz-box-shadow: 3px 3px 2px #303C30;
+  -webkit-box-shadow: 3px 3px 2px #303C30;
+  box-shadow: 3px 3px 2px #303C30;
+}
+
+#sidebar .sidebar-block h4 {
+  color: #53AA50;
+}
   
