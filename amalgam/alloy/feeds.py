@@ -80,7 +80,8 @@ class AllEntries(Feed):
     feed_type = Atom1Feed
 
     def link(self):
-        return 'http://%s' % self._settings.site.domain
+        current_site = Site.objects.get(id=settings.SITE_ID)
+        return 'http://%s' % current_site.domain
 
     def items(self):
         return Proxy.objects.published().order_by('-pub_date')[:10]
