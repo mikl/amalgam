@@ -1,6 +1,6 @@
 -e svn+http://code.djangoproject.com/svn/django/trunk/#egg=django
 South
-BeautifulSoup==3.0.8
+BeautifulSoup<3.1
 django-tagging
 Markdown
 Pygments
