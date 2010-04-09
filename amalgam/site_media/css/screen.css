@@ -116,18 +116,41 @@ body.post_detail #main_content .post h1 {
 }
 
 #sidebar .sidebar-block {
-  background-color: white;
   margin-bottom: 20px;
-  padding: 10px;
-  -moz-border-radius: 10px;
-  -webkit-border-radius: 10px;
-  border-radius: 10px;
-  -moz-box-shadow: 3px 3px 2px #303C30;
-  -webkit-box-shadow: 3px 3px 2px #303C30;
-  box-shadow: 3px 3px 2px #303C30;
+}
+
+#sidebar .sidebar-block a,
+#sidebar .sidebar-block li,
+#sidebar .sidebar-block h4 {
+  color: #8FA48E;
 }
 
 #sidebar .sidebar-block h4 {
-  color: #53AA50;
+  font-size: 14px;
 }
-  
+
+#sidebar .sidebar-block li {
+  font-size: 11px;
+  margin-left: 15px;
+  list-style-type: disc;
+}
+
+
+#blog-pagination {
+  margin: 10px 10px 10px 0;
+}
+
+#blog-pagination .newer {
+  width: 33%;
+}
+
+#blog-pagination .older {
+  float: right;
+  text-align: right;
+  width: 33%;
+}
+
+#footer {
+  margin: 10px;
+}
+
