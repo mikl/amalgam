@@ -30,18 +30,33 @@
 {% endcomment %}
 
 {% block content %}
-
   <div class="post clearfix">
-    <div class="date">{{ object.publish|date:"M d" }}</div>
-    <h2>{{ object.title }}</h2>
-    <p class="teaser">{{ object.tease|safe }}</p>
-      <div class="body">
-  {% oembed %}
-      {{ object.body_markup|render_inlines|safe }}
-  {% endoembed %}
+    <a class="tab" href="{{ object.get_absolute_url }}">#{{ object.id }}</a>
+    <div class="meta">
+      <p class="byline">
+      {% blocktrans with object.author.get_full_name as name and object.publish|date:"SHORT_DATETIME_FORMAT" as date %}Blog post<br />
+      by {{ name }}<br />
+      on {{ date }}
+      {% endblocktrans %}
+      </p>
+      {% if object.modified > object.publish %}
+          <p class="last-update">
+          {% blocktrans with object.modified|date:"SHORT_DATETIME_FORMAT" as date %}
+          Last updated<br /> on {{ date }}
+          {% endblocktrans %}
+          </p>
+      {% endif %}
+    </div>
+    <div class="content">
+        <h1>{{ object.title }}</h1>
+        <p class="teaser">{{ object.tease|safe }}</p>
+          <div class="body">
+        {% oembed %}
+          {{ object.body|render_inlines|markdown:"codehilite" }}
+        {% endoembed %}
+          </div>
       </div>
   </div>
 
   {#{% include "blog/includes/comments.html" %}#}
 {% endblock %}
-
