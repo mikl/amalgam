@@ -30,15 +30,25 @@
         <div id="logo">
             <h1><a href="/">{{ BLOG_SETTINGS.site_name }}</a></h1>
         </div>
+        {% if BLOG_SETTINGS.site_slogan %}
+        <h5 class="slogan">{{ BLOG_SETTINGS.site_slogan }}</h5>
+        {% endif %}
     {% endblock %}
     </div>
 
-    <div id="body">
+    <div id="body" class="clearfix">
     {% block body %}
         <div id="main_content">
             {% block content %}{% endblock %}
         </div>
         <div id="sidebar">
+          <div id="sidebar-about" class="sidebar-block">
+            <h4>{% trans "About" %}</h4>
+            {% if BLOG_SETTINGS.about_text %}
+            <p class="about_text">{{ BLOG_SETTINGS.about_text|safe }}</p>
+            {% endif %}
+          </div>
+
           <div id="sidebar-categories" class="sidebar-block">
             {% cache 3600 "base.category_list" %}
             {% get_blog_categories as category_list %}
@@ -84,7 +94,10 @@
     {% endblock %}
     </div>
 
-    <div id="footer">
+    <div id="footer" class="clearfix">
+        {% if BLOG_SETTINGS.footer_text %}
+        <p class="footer-text">{{ BLOG_SETTINGS.footer_text }}</p>
+        {% endif %}
         <div class="content">{% block footer %}{% endblock %}</div>
     </div>
   </div>
