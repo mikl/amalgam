@@ -2,7 +2,7 @@ from django import http
 from django.conf import settings
 from django.http import HttpResponse
 from django.shortcuts import get_object_or_404, render_to_response
-from django.template import RequestContext
+from django.template import loader, Context, RequestContext
 from django.views.generic import list_detail
 
 from basic.blog.models import Post, Category
@@ -77,4 +77,13 @@ def contact_form(request, form_class=ContactForm,
     '''
     return django_contact_form(request, form_class=form_class,
                  template_name=template_name)
+
+def server_error(request, template_name='500.html'):
+    '''Handles displaying 500 server error page along with application MEDIA.'''
+
+    t = loader.get_template(template_name)
+    return http.HttpResponseServerError(t.render(Context({
+        "MEDIA_URL": settings.MEDIA_URL,
+        "BLOG_SETTINGS": settings.AMALGAM_SETTINGS,
+    })))
 

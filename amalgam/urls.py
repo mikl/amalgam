@@ -21,6 +21,9 @@ sitemaps = {
     'posts': BlogSitemap,
 }
 
+# override the default handler500 so we pass MEDIA_URL (nod to oebfare)
+handler500 = "alloy.views.server_error"
+
 urlpatterns = patterns('',
     (r'^admin/', include(admin.site.urls)),
 
