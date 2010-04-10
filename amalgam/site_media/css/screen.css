@@ -29,13 +29,13 @@ a:hover {color: #95F792; text-decoration: underline;}
 
 
 #main_content .post_list li,
-body.post_detail #main_content .post {
+body #main_content .post {
   margin-bottom: 20px;
 }
 
 
 #main_content .post_list li .tab,
-body.post_detail #main_content .post .tab {
+body #main_content .post .tab {
   background-color: white;
   color: #999;
   display: block;
@@ -58,7 +58,7 @@ body.post_detail #main_content .post .tab {
 }
 
 #main_content .post_list li .meta,
-body.post_detail #main_content .post .meta {
+body #main_content .post .meta {
   color: #8FA48E;
   float: left;
   font-size: 11px;
@@ -68,7 +68,7 @@ body.post_detail #main_content .post .meta {
 }
 
 #main_content .post_list li .content,
-body.post_detail #main_content .post .content {
+body #main_content .post .content {
   background-color: white;
   color: black;
   margin-left: 150px;
@@ -89,7 +89,7 @@ body.post_detail #main_content .post .content {
   margin-bottom: 10px;
 }
 
-body.post_detail #main_content .post h1 {
+body #main_content .post h1 {
   color: #53AA50;
   font-size: 24px;
   margin-bottom: 10px;

@@ -1,0 +1,17 @@
+{% extends "base.html" %}
+
+{% block title %}Page not found (404) | {{ block.super }}{% endblock %}
+
+{% block body_class %}404{% endblock %}
+
+{% block content %}
+<div class="post clearfix">
+    <a class="tab">404</a>
+    <div class="content">
+        <h1>Page not found</h1>
+        <p class="teaser">The page you were looking for was not found.</p>
+        <p>Try and see if you can find what you’re looking for on the <a href="/">front page</a> or in the sidebar navigation.</p>
+    </div>
+</div>
+{% endblock %}
+
