@@ -1,0 +1,8 @@
+<ul id="blog-pagination">
+  {% if has_next %}
+  <li class="older"><a href="?page={{ next }}">Older posts &raquo;</a></li>
+  {% endif %}
+  {% if has_previous %}
+  <li class="newer"><a href="?page={{ previous }}">&laquo; Newer posts</a></li>
+  {% endif %}
+</ul>

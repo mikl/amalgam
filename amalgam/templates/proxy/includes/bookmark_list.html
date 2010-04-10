@@ -1,0 +1,20 @@
+{% load i18n markup %}
+
+<li class="bookmark clearfix">
+  <a class="tab" href="{{ object.content_object.get_absolute_url }}">#{{ object.content_object.id }}</a>
+  <div class="meta">
+    <p class="byline">
+    {% blocktrans with object.pub_date|date:"SHORT_DATETIME_FORMAT" as date %}Bookmark posted<br />
+    on {{ date }}
+    {% endblocktrans %}
+    </p>
+  </div>
+  <div class="content">
+  <h2><a href="{{ object.content_object.get_absolute_url }}">{{ object.title }}</a></h2>
+    <div class="body">
+    {{ object.description|markdown:"codehilite" }}
+  <p>Visit: <a href="{{ object.content_object.get_absolute_url }}" title="{{ object.title }}">{{ object.content_object.get_absolute_url }}</a></p>
+    </div>
+  </div>
+</li>
+
