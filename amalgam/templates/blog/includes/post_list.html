@@ -1,0 +1,17 @@
+{% load i18n %}
+<li class="post clearfix">
+  <a class="tab" href="{{ post.get_absolute_url }}">#{{ post.id }}</a>
+  <div class="meta">
+    <p class="byline">
+    {% blocktrans with post.author.get_full_name as name and post.publish|date:"SHORT_DATETIME_FORMAT" as date %}Blog post<br />
+    by {{ name }}<br />
+    on {{ date }}
+    {% endblocktrans %}
+    </p>
+  </div>
+  <div class="content">
+      <h2><a href="{{ post.get_absolute_url }}">{{ post.title }}</a></h2>
+      <p class="teaser">{{ post.tease|safe }}</p>
+    </div>
+</li>
+
