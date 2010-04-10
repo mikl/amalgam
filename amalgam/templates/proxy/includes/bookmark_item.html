@@ -1,7 +1,7 @@
 {% load i18n markup %}
 
 <li class="bookmark clearfix">
-  <a class="tab" href="{{ object.content_object.get_absolute_url }}">#{{ object.id }}</a>
+  <a class="tab" href="{{ object.content_object.get_absolute_url }}">#{{ object.content_object.id }}</a>
   <div class="meta">
     <p class="byline">
     {% blocktrans with object.pub_date|date:"SHORT_DATETIME_FORMAT" as date %}Bookmark posted<br />

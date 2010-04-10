@@ -1,7 +1,7 @@
 {% load blog i18n inlines markup oembed_tags tagging_tags %}
 
 <li class="post clearfix">
-  <a class="tab" href="{{ object.content_object.get_absolute_url }}">#{{ object.id }}</a>
+  <a class="tab" href="{{ object.content_object.get_absolute_url }}">#{{ object.content_object.id }}</a>
   <div class="meta">
     <p class="byline">
     {% blocktrans with object.content_object.author.get_full_name as name and object.pub_date|date:"SHORT_DATETIME_FORMAT" as date %}Blog post<br />
