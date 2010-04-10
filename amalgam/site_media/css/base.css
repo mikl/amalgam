@@ -1,7 +1,7 @@
 
 /** Base font **/
 body {
-  font: 13px/1.5 "Lucida Grande", "Lucida Sans Unicode", "Lucida Sans", Geneva, Verdana, sans-serif;
+  font: 11px/1.8 "Lucida Grande", "Lucida Sans Unicode", "Lucida Sans", Geneva, Verdana, sans-serif;
   margin: 0;
 }
 
@@ -19,12 +19,12 @@ body {
   height: 0;
 }
 
-h1 { font-size: 36px; }
-h2 { font-size: 24px; }
-h3 { font-size: 20px; }
-h4 { font-size: 18px; }
-h5 { font-size: 16px; }
-h6 { font-size: 14px; }
+h1 { font-size: 24px; }
+h2 { font-size: 20px; }
+h3 { font-size: 16px; }
+h4 { font-size: 14px; }
+h5 { font-size: 11px; }
+h6 { font-size: 11px; }
 
 h1, h2, h3, h4, h5, h6, p {
   margin-bottom: 0.5em;
