@@ -1,13 +1,30 @@
 {% load blog tagging_tags inlines oembed_tags %}
 
-<div class="post clearfix">
-  <div class="date">{{ post.publish|date:"M d" }}</div>
-  <h2><a href="{{ post.get_absolute_url }}">{{ post.title }}</a></h2>
-  <p class="teaser">{{ post.tease|safe }}</p>
+<li class="post clearfix">
+  <a class="tab" href="{{ post.get_absolute_url }}">#{{ post.id }}</a>
+  <div class="meta">
+    <p class="byline">
+    {% blocktrans with post.author.get_full_name as name and post.publish|date:"SHORT_DATETIME_FORMAT" as date %}Blog post<br />
+    by {{ name }}<br />
+    on {{ date }}
+    {% endblocktrans %}
+    </p>
+    {% if post.updated_on > post.pub_date %}
+        <p class="last-update">
+        {% blocktrans with post.updated_on|date:"SHORT_DATETIME_FORMAT" as date %}
+        Last updated<br /> on {{ date }}
+        {% endblocktrans %}
+        </p>
+    {% endif %}
+  </div>
+  <div class="content">
+      <h2><a href="{{ post.get_absolute_url }}">{{ post.title }}</a></h2>
+      <p class="teaser">{{ post.tease|safe }}</p>
     <div class="body">
   {% oembed %}
-    {{ post.body_markup|render_inlines|safe }}
+    {{ post.body_markup|render_inlines|markdown:"codehilite" }}
   {% endoembed %}
     </div>
-</div>
-<!-- post -->
+  </div>
+</li>
+
