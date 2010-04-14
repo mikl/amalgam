@@ -94,14 +94,15 @@ INSTALLED_APPS = (
     'django.contrib.sites',
     'django.contrib.messages',
 
-    'django_extensions',
-    'south',
-    'tagging',
-    'basic.inlines',
     'basic.blog',
     'basic.bookmarks',
-    'oembed',
+    'basic.inlines',
+    'django_extensions',
     'django_proxy',
+    'google_analytics',
+    'oembed',
+    'south',
+    'tagging',
 )
 
 # local_settings.py can be used to override environment-specific settings
