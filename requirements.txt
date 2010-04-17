@@ -14,4 +14,5 @@ python-dateutil
 -e git+git://github.com/hbussell/django-slimmer.git#egg=django-slimmer
 -e git+git://github.com/brosner/django-oembed.git#egg=oembed
 -e git+git://github.com/mikl/django-google-analytics.git#egg=google_analytics
+-e git+git://github.com/pydanny/django-uni-form.git#egg=uni_form
 

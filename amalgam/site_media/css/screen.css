@@ -114,6 +114,15 @@ body #main_content .post h1 {
   margin-bottom: 5px;
 }
 
+#contact-form .ctrlHolder {
+  padding: 10px 0;
+}
+
+#contact-form button {
+  background-color: #4B5A4A;
+  border: 1px solid #303C30;
+}
+
 #sidebar .sidebar-block {
   margin-bottom: 20px;
 }

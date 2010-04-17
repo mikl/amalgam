@@ -100,9 +100,11 @@ INSTALLED_APPS = (
     'django_extensions',
     'django_proxy',
     'google_analytics',
+    'honeypot',
     'oembed',
     'south',
     'tagging',
+    'uni_form',
 )
 
 # local_settings.py can be used to override environment-specific settings

@@ -1,0 +1,38 @@
+{% extends "blog/base_blog.html" %}
+{% load honeypot i18n uni_form_tags %}
+{% block title %}{% trans "Contact" %} | {{ block.super }}{% endblock %}
+
+{% block body_class %}contact-form{% endblock %}
+
+{% block extra_css %}
+<link rel="stylesheet" href="{{ MEDIA_URL }}uni_form/default.uni-form.css" />
+<link rel="stylesheet" href="{{ MEDIA_URL }}uni_form/uni-form.css" />
+{% endblock %}
+
+{% block extra_js %}
+<script src="{{ MEDIA_URL }}js/jquery.js"></script> 
+<script src="{{ MEDIA_URL }}uni_form/uni-form.jquery.js"></script> 
+{% endblock %}
+
+{% block content %}
+<div class="post clearfix">
+    <a class="tab">Feedback</a>
+    <div class="content">
+        <h1>{% trans "Contact me" %}</h1>
+
+        <p>You can send me an e-mail by filling out the form below.</p>
+
+        <form action="." class="uniForm" id="contact-form" method="post" >
+            {% csrf_token %}
+            {% render_honeypot_field %}
+
+            {{ form|as_uni_form }}
+
+            <div class="buttonHolder">
+                <button class="primaryAction" type="submit">Send message</button>
+            </div>
+        </div>
+    </div>
+</form>
+
+{% endblock %}
