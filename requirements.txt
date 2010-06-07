@@ -1,4 +1,4 @@
--e svn+http://code.djangoproject.com/svn/django/trunk/#egg=django
+Django
 South
 BeautifulSoup<3.1
 django-tagging
